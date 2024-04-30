@@ -1,0 +1,18 @@
+:root {
+  --test-color: #4e025b;
+  --test-color--item: #4e025b;
+}
+
+[data-theme="dark"] {
+  --test-color: #dadada;
+  --test-color--item: #ffffff;
+}
+
+.slick-dots li button:before {
+  margin-top: 15px;
+  color: var(--test-color);
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--test-color--item);
+}
