@@ -1,5 +1,7 @@
 
 
+import Swal from 'sweetalert2'
+
 export const ContactFormMain = ({ addTestimonio }) => {
 
     const handleSubmit = (event) => {
@@ -25,16 +27,23 @@ export const ContactFormMain = ({ addTestimonio }) => {
 
         // Limpiar el formulario
         event.target.reset();
+
+        Swal.fire({
+            icon: "success",
+            title: "Muchas Gracias!",
+            showConfirmButton: false,
+            timer: 1500
+        });
     };
     return (
         <div className="contacts12-main">
             <form onSubmit={handleSubmit} className="main-input">
 
                 <div className="top-inputs d-grid">
-                    <input type="text" placeholder="Nombre" name="w3lName" id="w3lName" required="" />
-                    <input type="text" name="w3lSender" placeholder="Familiar/Amigo/Conocido" id="w3lSender" required="" />
+                    <input type="text" placeholder="Nombre" name="w3lName" id="w3lName" required />
+                    <input type="text" name="w3lSender" placeholder="Familiar/Amigo/Conocido" id="w3lSender" required />
                 </div>
-                <textarea placeholder="Dedicale algunas palabras a Nicole" name="w3lMessage" id="w3lMessage" required="" rows={10}></textarea>
+                <textarea placeholder="Dedicale algunas palabras a Nicole" name="w3lMessage" id="w3lMessage" required rows={10}></textarea>
                 <div className="text-center">
                     <button type="submit" className="btn btn-primary btn-style">Enviar Saludo</button>
                 </div>
